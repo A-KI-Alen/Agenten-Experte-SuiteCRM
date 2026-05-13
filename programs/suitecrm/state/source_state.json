@@ -1,0 +1,15 @@
+{
+  "program": "suitecrm",
+  "docs_url": "https://docs.suitecrm.com/",
+  "docs_repo": "SuiteCRM/SuiteDocs",
+  "docs_branch": "master",
+  "suite_docs_commit": "1024101ae2414f61f59e2ec5f01b61bbf2e02871",
+  "crawl_file": "programs/suitecrm/raw/latest.md",
+  "crawl_sha256": "58b2e5e331406407e48474976ae44e437f28e886a4cfd86999bfad32142af311",
+  "crawl_timestamp_utc": "2026-05-11T11:48:44Z",
+  "pages": 481,
+  "code_blocks": 2039,
+  "last_checked_utc": "2026-05-13T07:14:17Z",
+  "site_fingerprint_url": "https://docs.suitecrm.com/sitemap.xml",
+  "site_fingerprint_sha256": "fdd1a7b37ec4b14a20e040d0bdeab6eef6ec0a2512596d60131726c3ed74f4e9"
+}

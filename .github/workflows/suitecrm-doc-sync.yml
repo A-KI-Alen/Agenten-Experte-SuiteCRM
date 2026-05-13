@@ -1,0 +1,86 @@
+name: SuiteCRM Docs Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Twice per month, close to a two-week cadence.
+    - cron: "17 4 1,15 * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  suitecrm-doc-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check upstream state
+        id: check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/check_suitecrm_updates.py \
+            --state programs/suitecrm/state/source_state.json \
+            --report reports/suitecrm-update-check.md
+
+      - name: Renew SuiteCRM crawl and generated pack
+        if: steps.check.outputs.update_needed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/crawl_docs_site.py \
+            --start-url https://docs.suitecrm.com/ \
+            --output programs/suitecrm/raw/latest.md \
+            --max-pages 700 \
+            --max-depth 8
+
+          python scripts/build_specialist_doc_pack.py \
+            --source programs/suitecrm/raw/latest.md \
+            --slug suitecrm \
+            --name SuiteCRM \
+            --output-root programs \
+            --docs-repo SuiteCRM/SuiteDocs \
+            --code-repo SuiteCRM/SuiteCRM \
+            --code-repo SuiteCRM/SuiteCRM-Core \
+            --issue-repo SuiteCRM/SuiteCRM \
+            --issue-repo SuiteCRM/SuiteCRM-Core \
+            --repo-alias salesagility/SuiteCRM \
+            --repo-alias salesagility/SuiteCRM-Core
+
+          python scripts/check_suitecrm_updates.py \
+            --state programs/suitecrm/state/source_state.json \
+            --report reports/suitecrm-update-check.md \
+            --refresh-state-from-crawl programs/suitecrm/raw/latest.md
+
+      - name: Open pull request
+        if: steps.check.outputs.update_needed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then
+            echo "No file changes after crawl."
+            exit 0
+          fi
+
+          branch="automated/suitecrm-docs-sync-${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add programs/suitecrm reports/suitecrm-update-check.md
+          git commit -m "chore: refresh SuiteCRM docs crawl"
+          git push --set-upstream origin "$branch"
+          gh pr create \
+            --title "chore: refresh SuiteCRM docs crawl" \
+            --body-file reports/suitecrm-update-check.md

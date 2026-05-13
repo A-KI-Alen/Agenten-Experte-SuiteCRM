@@ -1,0 +1,25 @@
+# SuiteCRM Specialist Source
+
+- Raw crawl: `programs/suitecrm/raw/latest.md`
+- Source of truth: official docs/source repositories where available; raw crawl is a dated snapshot and fallback.
+- Permission model: read-only specialist knowledge. Fixes are implemented by the Debugger, not by the specialist.
+
+## Repository Sources
+
+- Docs repo: `SuiteCRM/SuiteDocs`
+- Code repo: `SuiteCRM/SuiteCRM`
+- Code repo: `SuiteCRM/SuiteCRM-Core`
+- Issue/PR search repo: `SuiteCRM/SuiteCRM`
+- Issue/PR search repo: `SuiteCRM/SuiteCRM-Core`
+
+## Crawl Header
+
+# Documentation Crawl: https://docs.suitecrm.com/
+
+- **Start-URL:** https://docs.suitecrm.com/
+- **Seiten gecrawlt:** 481
+- **Codebloecke erfasst:** 2039
+- **Tabs/Accordions aktiviert:** 0
+- **Zeitstempel (UTC):** 2026-05-11T11:48:44Z
+- **Erfassungsmodus:** Playwright Rendering, Same-Origin Crawl, DOM Hidden-Content Pass, Tab-/Accordion-Pass, Codeblock-Deduplikation, Prettier-Finalisierung
+
