@@ -32,7 +32,7 @@ def utc_now() -> str:
 
 def request_bytes(url: str) -> bytes:
     headers = {
-        "User-Agent": "A-KI Program Knowledge Sync/1.0",
+        "User-Agent": "A-KI Agenten-Experte-SuiteCRM Sync/1.0",
         "Accept": "application/json,text/xml,text/html,*/*",
     }
     token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")

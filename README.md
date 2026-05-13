@@ -1,9 +1,9 @@
-# A-KI Program Knowledge
+# Agenten-Experte-SuiteCRM
 
-Public knowledge packs for A-KI program specialists.
+Public SuiteCRM expert knowledge pack for A-KI program specialists.
 
-This repository stores reproducible, versioned knowledge artifacts used by
-read-only specialist agents. The first program pack is SuiteCRM.
+This repository stores reproducible, versioned SuiteCRM knowledge artifacts used
+by read-only specialist agents.
 
 ## Structure
 
@@ -23,7 +23,7 @@ scripts/
   check_suitecrm_updates.py    # upstream change detector
 ```
 
-## SuiteCRM Source Model
+## Source Model
 
 The SuiteCRM specialist uses three layers:
 

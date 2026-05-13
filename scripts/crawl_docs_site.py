@@ -110,7 +110,7 @@ def crawl(start_url: str, max_pages: int, max_depth: int) -> list[PageResult]:
     normalized_start = normalize_url(start_url)
     base_netloc = urlparse(normalized_start).netloc
     session = requests.Session()
-    session.headers.update({"User-Agent": "A-KI Program Knowledge Crawler/1.0"})
+    session.headers.update({"User-Agent": "A-KI Agenten-Experte-SuiteCRM Crawler/1.0"})
 
     queue: deque[tuple[str, int]] = deque([(normalized_start, 0)])
     seen: set[str] = set()
