@@ -1,13 +1,13 @@
 # SuiteCRM Docs Update Check
 
-- Checked UTC: `2026-05-13T07:16:53Z`
+- Checked UTC: `2026-05-15T07:37:14Z`
 - Update needed: `false`
-- Stored SuiteDocs commit: `1024101ae2414f61f59e2ec5f01b61bbf2e02871`
-- Latest SuiteDocs commit: `1024101ae2414f61f59e2ec5f01b61bbf2e02871`
-- Stored site fingerprint: `fdd1a7b37ec4b14a20e040d0bdeab6eef6ec0a2512596d60131726c3ed74f4e9`
-- Latest site fingerprint: `fdd1a7b37ec4b14a20e040d0bdeab6eef6ec0a2512596d60131726c3ed74f4e9`
+- Stored SuiteDocs commit: `00970f2ce8af609afee249126aba23554933a480`
+- Latest SuiteDocs commit: `00970f2ce8af609afee249126aba23554933a480`
+- Stored site fingerprint: `4013b6bdb81119c0dfce655405fee9b379b11239355638d8dcd2f7663a5294af`
+- Latest site fingerprint: `4013b6bdb81119c0dfce655405fee9b379b11239355638d8dcd2f7663a5294af`
 - Site fingerprint URL: `https://docs.suitecrm.com/sitemap.xml`
 
 ## Reasons
 
-- No upstream changes detected.
+- State refreshed from renewed crawl.

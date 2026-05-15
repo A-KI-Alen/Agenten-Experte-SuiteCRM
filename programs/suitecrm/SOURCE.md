@@ -17,9 +17,9 @@
 # Documentation Crawl: https://docs.suitecrm.com/
 
 - **Start-URL:** https://docs.suitecrm.com/
-- **Seiten gecrawlt:** 481
-- **Codebloecke erfasst:** 2039
+- **Seiten gecrawlt:** 354
+- **Codebloecke erfasst:** 127
 - **Tabs/Accordions aktiviert:** 0
-- **Zeitstempel (UTC):** 2026-05-11T11:48:44Z
-- **Erfassungsmodus:** Playwright Rendering, Same-Origin Crawl, DOM Hidden-Content Pass, Tab-/Accordion-Pass, Codeblock-Deduplikation, Prettier-Finalisierung
+- **Zeitstempel (UTC):** 2026-05-15T07:37:13Z
+- **Erfassungsmodus:** Requests/BeautifulSoup Same-Origin Crawl, Markdownify Rendering
 
